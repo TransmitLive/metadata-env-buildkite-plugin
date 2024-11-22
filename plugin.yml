@@ -8,3 +8,6 @@ configuration:
     keys:
       type: array
       minimum: 1
+    fail_on_missing:
+      type: boolean
+      default: true
