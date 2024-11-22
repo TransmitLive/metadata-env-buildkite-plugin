@@ -54,7 +54,7 @@ function read_meta_data() {
     echo "${mapped_key}=\"${value}\""
   else
     echo "Could not read meta-data: ${meta_data_key}" >&2;
-    if [[ $BUILDKITE_PLUGIN_METADATA_ENV_FAIL_ON_MISSING == "true" ]]; then
+    if [[ ${BUILDKITE_PLUGIN_METADATA_ENV_FAIL_ON_MISSING:-'false'} == "true" ]]; then
       exit 1
     else
       echo >&2 "Skipping missing meta-data key: ${meta_data_key}"
